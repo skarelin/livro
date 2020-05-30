@@ -7,7 +7,7 @@ I am glad to introduce my first own project here in GitHub.
 
 After downloading the application you should to create new account in date base (authorization process is the same):
 
-![register](C:\Users\Sergey\Desktop\readme pictures\register.png)
+![Image](https://imgur.com/SWtlPsk)
 
 After the registering you will see guide of using this application:
 
