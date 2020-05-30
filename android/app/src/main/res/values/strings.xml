@@ -1,0 +1,97 @@
+<resources>
+    <!-- General -->
+    <string name="app_name">Read and Learn!</string>
+
+    <!-- General: Navigation -->
+    <string name="navigation_add_book">Добавить книгу</string>
+    <string name="navigation_books">Ваши книги</string>
+    <string name="navigation_dictionary">История переводов</string>
+    <string name="navigation_send_email">Send email</string>
+    <string name="navigation_sign_up">Регистрация</string>
+
+    <!-- General: Helper -->
+    <string name="helper_missing_field">This field can\'t be empty: "%s"</string>
+    <string name="helper_exit_hint">Press once again to exit</string>
+
+    <!-- Screen: Login -->
+    <string name="login_header_title">Авторизация</string>
+    <string name="login_header_subtitle">Введите ваши данные</string>
+    <string name="login_username">Логин</string>
+    <string name="login_password">Пароль</string>
+    <string name="login_button">Логин</string>
+    <string name="login_footer_title">У вас нет аккаунта?</string>
+    <string name="login_footer_subtitle">Зарегистрироваться сейчас</string>
+
+    <!-- Screen: Sign up -->
+    <string name="sign_up_header_title">Регистрация</string>
+    <string name="sign_up_header_subtitle">Введите ваши данные</string>
+    <string name="sign_up_username">Пользователь</string>
+    <string name="sign_up_password">Пароль</string>
+    <string name="sign_up_button">Зарегистрироваться</string>
+
+    <!-- Screen: Add book -->
+
+    <string name="add_book_status_uploaded">Ваша книга загружена!</string>
+    <string name="add_book_status_downloaded">Выбранная книга успешно загружена!</string>
+    <string name="add_book_status_error_invalid_path">Тип данного файла не поддерживается в нашей системе. Только TXT и EPUB</string>
+    <string name="add_book_upload_own">Загрузить собственную книгу</string>
+    <string name="add_book_download">Загрузить</string>
+
+    <!-- Screen: Upload own book -->
+    <string name="upload_book_header">Загрузить собственную книгу</string>
+    <string name="upload_book_description">Введите данные вашей книги. Можно загружать только txt и epub формат.</string>
+    <string name="upload_book_title">Заголовок</string>
+    <string name="upload_book_file">Выбрать файл</string>
+    <string name="upload_book_choose_file">Выбрать</string>
+    <string name="upload_book_button_upload">Загрузить</string>
+
+    <!-- Screen: Send email -->
+    <string name="send_email_header_title">Demo</string>
+    <string name="send_email_header_subtitle">It\'s a demo version! Let us know if we should improve our application. Provide your email if you are interested to get the application for free!</string>
+    <string name="send_email_send_button">Send</string>
+    <string name="send_email">Email</string>
+
+    <!-- Screen: Dictionary -->
+    <string name="dictionary_search">Search</string>
+
+    <!-- Screen: Guide -->
+    <string name="guide_title">Guide</string>
+    <string name="guide_description">В процессе чтения книг Вы можете пользоваться автоматическим переводчиком. Управление в нашем приложении довольно простое:</string>
+    <string name="guide_one_tap">Нажмите на слово, чтобы увидеть его перевод</string>
+    <string name="guide_long_tap">Зажмите слово, чтобы перевести целое предложение</string>
+    <string name="guide_finish">Закрыть</string>
+
+    <!-- Dialog: Translation -->
+    <string name="dialog_translation_title">Перевод</string>
+    <string name="dialog_translation_button_close">Закрыть</string>
+
+    <!-- Dialog: Progress -->
+    <string name="dialog_progress_title">Загрузка</string>
+    <string name="dialog_progress_message">Пожалуйста, подождите, пока приложение загрузит данные...</string>
+
+    <!-- Dialog: Loading books -->
+    <string name="dialog_loading_books_title">Загрузка</string>
+    <string name="dialog_loading_books_message">Пожалуйста, подождите, пока приложение загрузит ваши книги...</string>
+
+    <!-- Dialog: TechWork -->
+    <string name="dialog_tech_work_title">Технические работы</string>
+    <string name="dialog_tech_work_message">Приносим извинения, в данный момент приложение недоступно. Мы работаем над его улучшением.</string>
+
+    <!-- Dialog: Server error -->
+    <string name="dialog_server_error_title_generic">Error occurred</string>
+    <string name="dialog_server_error_message_generic">An unknown error occurred while connecting to the server, please check your connection or try again later.</string>
+    <string name="dialog_server_error_title_unauthorized">Authorisation error</string>
+    <string name="dialog_server_error_message_unauthorized">An error occurred during authorization, maybe you entered the wrong data.</string>
+    <string name="dialog_server_error_title_unauthorized_bad_credentials">Bad user\'s credentials</string>
+    <string name="dialog_server_error_message_unauthorized_bad_credentials">An error occurred while processing the entered credentials, perhaps such a user is not registered.</string>
+    <string name="dialog_server_error_title_books_max_limit">Limit reached</string>
+    <string name="dialog_server_error_message_books_max_limit">It looks like you have reached the allowable book limit for a single user.</string>
+    <string name="dialog_server_error_title_words_incorrect">Incorrect word</string>
+    <string name="dialog_server_error_message_words_incorrect">The selected word was not found in our database of words.</string>
+    <string name="dialog_server_error_button_close">Close</string>
+
+    <!-- Dialog: Locked state -->
+    <string name="dialog_locked_state_title">Application locked</string>
+    <string name="dialog_locked_state_message">Thank you for your help in testing!\n\nYou have already used all the features of the trial version. We have saved your mail so that you will be notified of the start of the next phase of testing.\n\nIt is not possible to use the application at this time.</string>
+
+</resources>

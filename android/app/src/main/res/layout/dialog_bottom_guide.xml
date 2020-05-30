@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/windowBackground">
+
+    <TextView
+        android:id="@+id/dialogGuideTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/guide_title"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dialogGuideDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/fugura_regular"
+        android:text="@string/guide_description"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/dialogGuideTitle" />
+
+    <ImageView
+        android:id="@+id/dialogGuideOneTapIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_guide_tap"
+        app:layout_constraintEnd_toStartOf="@+id/dialogGuideLongTapIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogGuideDescription" />
+
+    <TextView
+        android:id="@+id/dialogGuideOneTapTitle"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/fugura_medium"
+        android:gravity="center_horizontal"
+        android:text="@string/guide_one_tap"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/dialogGuideOneTapIcon"
+        app:layout_constraintStart_toStartOf="@+id/dialogGuideOneTapIcon"
+        app:layout_constraintTop_toBottomOf="@+id/dialogGuideOneTapIcon" />
+
+    <ImageView
+        android:id="@+id/dialogGuideLongTapIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_guide_long_tap"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dialogGuideOneTapTitle"
+        app:layout_constraintTop_toBottomOf="@+id/dialogGuideDescription" />
+
+    <TextView
+        android:id="@+id/dialogGuideLongTapTitle"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/fugura_medium"
+        android:gravity="center_horizontal"
+        android:text="@string/guide_long_tap"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/dialogGuideLongTapIcon"
+        app:layout_constraintStart_toStartOf="@+id/dialogGuideLongTapIcon"
+        app:layout_constraintTop_toBottomOf="@+id/dialogGuideLongTapIcon" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/dialogGuideButtonFinish"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/fugura_medium"
+        android:text="@string/guide_finish"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogGuideLongTapTitle"
+        app:rippleColor="?attr/colorAccent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

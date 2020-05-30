@@ -1,0 +1,32 @@
+<resources>
+
+    <style name="Dialog" />
+
+    <style name="Livro.Theme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="android:listDivider">@color/colorBackground</item>
+        <item name="android:dividerHeight">1dp</item>
+
+        <item name="colorControlActivated">?attr/colorAccent</item>
+
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+        <item name="bottomSheetDialogTheme">@style/Dialog.Bottom</item>
+        <item name="materialAlertDialogTheme">@style/Dialog.Alert</item>
+    </style>
+
+    <style name="Dialog.Alert" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="Dialog.Bottom" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">?android:colorBackground</item>
+    </style>
+
+</resources>

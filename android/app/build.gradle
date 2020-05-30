@@ -1,0 +1,120 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion compileSDKVersion
+
+    defaultConfig {
+        applicationId "com.sergeykarelin.livro"
+        minSdkVersion minimumSDKVersion
+        targetSdkVersion targetSDKVersion
+        versionCode 4
+        versionName "1.0"
+
+        archivesBaseName = "[$versionName] Livro [${versionCode}]"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
+
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    bundle {
+        density {
+            enableSplit true
+        }
+
+        abi {
+            enableSplit true
+        }
+
+        language {
+            enableSplit false
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude("META-INF/*.kotlin_module")
+    }
+
+}
+
+dependencies {
+
+    // Internal
+    implementation project(':pickit')
+
+    // Google: Android X
+    implementation "androidx.recyclerview:recyclerview:$androidXRecyclerViewVersion"
+    implementation "androidx.preference:preference:$androidXPreferencesVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$androidXContstraintLayoutVersion"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$androidXSwipeRefreshLayoutVersion"
+    implementation "androidx.room:room-runtime:$androidXRoomVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$androidXLifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$androidXLifecycleVersion"
+
+    // Google: Android X KTX
+    implementation "androidx.core:core-ktx:$androidXCoreKTXVersion"
+    implementation "androidx.activity:activity-ktx:$androidXActivityKTXVersion"
+    implementation "androidx.fragment:fragment-ktx:$androidXFragmentKTXVersion"
+    implementation "androidx.room:room-ktx:$androidXRoomVersion"
+
+    // Google: Design
+    implementation "com.google.android.material:material:$materialComponentsVersion"
+
+    // Google: Tools
+    implementation "com.google.code.gson:gson:$gsonVersion"
+
+    // Tools
+    implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
+    implementation "com.github.mertakdut:EpubParser:$epubParserVersion"
+    implementation "io.coil-kt:coil:$coilVersion"
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutinesVersion"
+
+    // Annotation Processors
+    kapt "androidx.room:room-compiler:$androidXRoomVersion"
+
+}

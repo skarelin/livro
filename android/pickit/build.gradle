@@ -1,0 +1,19 @@
+apply plugin: 'com.android.library'
+
+android {
+
+    compileSdkVersion compileSDKVersion
+
+    defaultConfig {
+        minSdkVersion minimumSDKVersion
+        targetSdkVersion targetSDKVersion
+    }
+
+}
+
+dependencies {
+
+    // Google: Android X
+    implementation "androidx.appcompat:appcompat:$androidXCompatVersion"
+
+}
