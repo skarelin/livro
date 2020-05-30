@@ -3,7 +3,7 @@ I am glad to introduce my first own project here in GitHub.
 
 === Application description ==
 
-
+![architecture](readme-resources/architecture.jpg)
 
 After downloading the application you should to create new account in date base (authorization process is the same):
 
