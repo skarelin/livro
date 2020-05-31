@@ -1,0 +1,56 @@
+version: '3.1'
+
+volumes:
+  mysql-data:
+    driver: local
+  mysql-log:
+    driver: local
+  mysql-conf:
+    driver: local
+  postgres_data:
+    driver: local
+
+services:
+  dictionary_app_prod:
+    container_name: dictionary_app_prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8888:8082
+    depends_on:
+      - "dictionary_app_prod_postgres"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://dictionary_app_prod_postgres:5432/general
+      SPRING_DATA_MONGODB_URI: mongodb://springboot-mongo:27017/mongodb
+      APP.KEYCLOAK.TOKEN-URL: http://137.74.194.196:8080/auth/realms/SpringBootKeycloak/protocol/openid-connect/token
+      APP.KEYCLOAK.REGISTER-URL: http://137.74.194.196:8080/auth
+      KEYCLOAK.AUTH-SERVER-URL: http://137.74.194.196:8080/auth
+      LIBRARY.PATH-TO-FILE-STORAGE: /library/
+      PUBLIC-LIBRARY.PATH-TO-FILE-STORAGE: /public-library/
+    volumes:
+      - /library:/library
+      - /public-library:/public-library
+  dictionary_app_prod_postgres:
+    container_name: "dictionary_app_prod_postgres"
+    image: postgres
+    restart: always
+    ports:
+      - 5400:5432
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: general
+    volumes:
+      - /var/lib/dictionary_app_prod_postgres/postgres:/var/lib/postgresql/data
+  dictionary_app_prod_mongo:
+    image: mongo
+    container_name: springboot-mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - $HOME/data/springboot-mongo-data:/data/db
+      - $HOME/data/springboot-mongo-bkp:/data/bkp
+      - /var/lib/data:/var/lib/data
+    restart: always

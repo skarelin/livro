@@ -1,0 +1,87 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.8.RELEASE")
+		classpath('se.transmode.gradle:gradle-docker:1.2')
+	}
+}
+
+plugins {
+	id 'org.springframework.boot' version '2.1.5.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'docker'
+
+group = 'com.dictionary'
+version = '5.1'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	set('keycloakVersion', '4.8.3.Final')
+}
+
+dependencies {
+	// default after init
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// spring
+	compile("org.springframework.boot:spring-boot-starter-web")
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+	// swagger
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.0.2'
+
+	// mongo
+	compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+
+	// jpa and connector for mysql.
+	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+	compile 'mysql:mysql-connector-java' // TODO. Temporary. Remove after removing MySQL db from project.
+	// https://mvnrepository.com/artifact/org.postgresql/postgresql
+	compile group: 'org.postgresql', name: 'postgresql', version: '42.2.9'
+
+	// spring security
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.1.6.RELEASE'
+
+	// keycloak
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	//compile group: 'org.keycloak', name: 'keycloak-spring-security-adapter', version: '8.0.1'
+	compile group: 'org.keycloak', name: 'keycloak-spring-boot-starter', version: '8.0.1'
+	compile group: 'org.keycloak', name: 'keycloak-admin-client', version: '8.0.1'
+
+	compile group: 'org.jboss.resteasy', name: 'resteasy-client', version: '3.6.3.Final'
+	compile group: 'org.jboss.resteasy', name: 'resteasy-jackson2-provider', version: '3.6.3.Final' // 403 forbidden
+
+	compile group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: '2.4.0.RELEASE'
+
+	//lombok
+	compileOnly 'org.projectlombok:lombok:1.18.8'
+	annotationProcessor 'org.projectlombok:lombok:1.18.8'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.keycloak.bom:keycloak-adapter-bom:${keycloakVersion}"
+	}
+}
+
+task buildDocker (type:Docker, dependsOn: build) {
+	applicationName = jar.baseName
+	dockerfile = file('Dockerfile')
+	doFirst {
+		copy {
+			from jar
+			into stageDir
+		}
+	}
+}
