@@ -1,6 +1,3 @@
-TODO:
-- Remove API KEYS.
-
 I am glad to introduce my first own project here in GitHub.
 
 
