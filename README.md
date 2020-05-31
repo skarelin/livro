@@ -20,7 +20,8 @@ Here you can see an application architecture. I've used:
 3) Keycloak - same case here for education purpose, it could be simple Spring Security.
 4) Docker-compose for fast build in new server (my docker support windows and linux versions)
 
-Instruction for running server you'll find in server's readme.md 
+Instruction for running server you'll find in server's readme.md
+If you want to continue developing this application - you're welcome! I also added TODO list with important things to readme.
 
 ![architecture](readme-resources/architecture.jpg)
 
