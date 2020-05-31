@@ -20,6 +20,8 @@ Here you can see an application architecture. I've used:
 3) Keycloak - same case here for education purpose, it could be simple Spring Security.
 4) Docker-compose for fast build in new server (my docker support windows and linux versions)
 
+Instruction for running server you'll find in server's readme.md 
+
 ![architecture](readme-resources/architecture.jpg)
 
 After downloading the application you should to create new account in date base (authorization process is the same):
