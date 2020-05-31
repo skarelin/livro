@@ -24,9 +24,9 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://dictionary_app_prod_postgres:5432/general
       SPRING_DATA_MONGODB_URI: mongodb://springboot-mongo:27017/mongodb
-      APP.KEYCLOAK.TOKEN-URL: http://137.74.194.196:8080/auth/realms/SpringBootKeycloak/protocol/openid-connect/token
-      APP.KEYCLOAK.REGISTER-URL: http://137.74.194.196:8080/auth
-      KEYCLOAK.AUTH-SERVER-URL: http://137.74.194.196:8080/auth
+      APP.KEYCLOAK.TOKEN-URL: http://IP:8080/auth/realms/SpringBootKeycloak/protocol/openid-connect/token
+      APP.KEYCLOAK.REGISTER-URL: http://IP:8080/auth
+      KEYCLOAK.AUTH-SERVER-URL: http://IP:8080/auth
       LIBRARY.PATH-TO-FILE-STORAGE: /library/
       PUBLIC-LIBRARY.PATH-TO-FILE-STORAGE: /public-library/
     volumes:
